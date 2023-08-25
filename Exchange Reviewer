@@ -1,0 +1,45 @@
+1- Create a script file .ps1 using Powershell ISE 
+
+[CmdletBinding()]
+param (
+	[Parameter( Mandatory=$true)]
+	[string]$Mailbox,
+    
+	[Parameter( Mandatory=$true)]
+	[string]$User,
+    
+  	[Parameter( Mandatory=$true)]
+	[string]$Access
+)
+
+$exclusions = @("/Sync Issues",
+                "/Sync Issues/Conflicts",
+                "/Sync Issues/Local Failures",
+                "/Sync Issues/Server Failures",
+                "/Recoverable Items",
+                "/Deletions",
+                "/Purges",
+                "/Versions"
+                )
+
+
+
+$mailboxfolders = @(Get-EXOMailboxFolderStatistics $Mailbox | Where {!($exclusions -icontains $_.FolderPath)} | Select FolderPath)
+
+foreach ($mailboxfolder in $mailboxfolders)
+{
+    $folder = $mailboxfolder.FolderPath.Replace("/","\")
+    if ($folder -match "Top of Information Store")
+    {
+       $folder = $folder.Replace("\Top of Information Store","\")
+    }
+    $identity = "$($mailbox):$folder"
+    Write-Host "Adding $user to $identity with $access permissions"
+    Add-MailboxFolderPermission -Identity $identity -User $user -AccessRights $Access -ErrorAction SilentlyContinue
+}
+
+2- Connect to microsoft using Connect-Exchangeonline
+
+3- And run the following command for the mailbox and user
+
+.\ExchangeReadOnlyAccess.ps1 -Access reviewer -Mailbox USER@shaker.com.sa -User USER@shaker.com.sa
