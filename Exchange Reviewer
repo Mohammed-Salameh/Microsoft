@@ -42,4 +42,4 @@ foreach ($mailboxfolder in $mailboxfolders)
 
 3- And run the following command for the mailbox and user
 
-.\ExchangeReadOnlyAccess.ps1 -Access reviewer -Mailbox USER@shaker.com.sa -User USER@shaker.com.sa
+.\ExchangeReadOnlyAccess.ps1 -Access reviewer -Mailbox USER@domain.com.sa -User USER@domain.com.sa
