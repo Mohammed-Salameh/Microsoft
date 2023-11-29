@@ -24,4 +24,4 @@ icacls "C:\ProgramData\Microsoft\Windows\SystemData" /reset /t /c /l
 # Script Name:
    C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 # Script Parameteres 
-  -ExecutionPolicy Bypass -NoProfile -File "c:\lockscreen\lockscreen.ps1"
+  -ExecutionPolicy Bypass -NoProfile -File "c:\scripts\lockscreen.ps1"
