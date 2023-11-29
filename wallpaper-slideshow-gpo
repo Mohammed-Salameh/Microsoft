@@ -11,26 +11,7 @@
   Script Name: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
   Script Parameters: -ExecutionPolicy Bypass -NoProfile -File "c:\wallpaper\wallpaper-slideshow.ps1"
 
-<#
-.SYNOPSIS
-SetWallPaper.ps1 - This script sets the background option to "Slideshow" with a predefinied folder without user intervention.
-.DESCRIPTION
-This script does not use any of the official API and must therefore be considered NOT SUPPORTED.
-However, this script mimics all necessary steps, that SystemSettings.exe and Explorer.exe would do, to achieve the same
-BONUS:
-- Script allows you to freely choose the interval instead of fixed intervals
-.PARAMETER Shuffle
-Define if you want the wallpapers to be handled in order (by which Microsoft means:  1, 1a, 1b, 3, 4, 10, 22, 100, 111, a1, b2...)
-.PARAMETER IntervalMiliseconds
-Interval to change pictures, can be any number of miliseconds
-!!Attention!! The user will overwrite that value as soon as he so much as clicks the number in the settings
-.PARAMETER TargetPIDL
-You have to extract that Value from a machine that has been set up correctly. The value can be found here: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers 
-.NOTES 
-    1.0 22.07.2019 14:51 (GMT+1)
-    Initial Version, added parameters and documentation 
-    manima.de/2016/09/create-a-lock-screen-slideshow-with-more-than-one-picture-without-gpo-because-theres-none/
-#>
+
 # Configure CurrentUser Sourcefolder, Slideshow (BackgroundType = 2) and inform that the directory has been set
 param (
 [switch]$Shuffle,
