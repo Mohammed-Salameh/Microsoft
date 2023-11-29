@@ -2,8 +2,8 @@
 # Open powershell ISE and copy the below script and save the file under the name "wallpaper-slideshow.ps1"
 # Copy the script ps1 file into \\dc\sysvol\yourdomain\scripts\
 # Create a new User Policy
-# Navigate to User Configuration -> Prefereences -> Folders 
-# Add a Create folder uner the name "C:\wallpaper" note changing the Folder location or name will require you to change the below encrypeted path
+# Navigate to User Configuration -> Preferences -> Folders 
+# Add a Create folder under the name "C:\wallpaper" note changing the Folder location or name will require you to change the below encrypeted path
 [string]$TargetPIDL = "eEAFA8BUg/E0gouOpBhoYjAArADMdmBAvMkOcBAAAAAAAAAAAAAAAAAAAAAAAAw7AEDAAAAAAc3VxtLEAcVQMxEUB5XMAAARAkAAEAw7+e3Vxt7dXF3uuAAAAEh3BAAAAYBAAAAAAAAAAAAAAAAAAAwUsdMAXBQYAwGAsBAcAEGAwBQZAIHAAAAGAMJAAAwJA8uvFCAAAEzUQN1td66/Nyx/DFIjECkOjOXLpBAAAQGAAAAAfAAAAwCAAAwdAkGAuBAZA8GA3BwcA4CApBQbA0GAlBgcAMHApBgdAUGAjBwbA4GA0BgcA8GAsBAcAEGAuBQZAwGAfBwYAcHA1AgbAEDAoBgMAQHA4BQeAUGA3BQeAAAAAAAAAAAAAAAGAAAA"
 # Navigate to \\dc\sysvol\yourdomain\installation and create a folder and call it wallpaper
 # Navigate to User Configuration -> Preferences -> Files and create a copy from \\dc\sysvol\yourdomain\installation\wallaper\image.jpg create copy as much as you need or you can use a script for copying to the destination folder which is c:\wallpaper
