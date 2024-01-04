@@ -1,0 +1,23 @@
+- Error: 
+
+the on premise synchronization service is not able to connect to azure active directory updating the proxy settings for the ad sync service account may resolve this issue
+
+- Solution:
+
+1- Nagivate to c:\Windows\Microsoft.NET\Framework64\v4.0.30319\config\machine.config
+
+2- and add the below at the bottom
+
+<system.net>
+       <defaultProxy>
+          <proxy
+              usesystemdefault="true"
+              proxyaddress="http://IP-Address-Or-DNS-Name:Port
+              bypassonlocal="true"
+              />
+         </defaultProxy>
+</system.net>
+
+</configuration>
+
+Now retry to sync it should work
