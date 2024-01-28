@@ -110,7 +110,7 @@ Copy-Item .\slideshow.ini -Destination ($env:APPDATA+"\Microsoft\Windows\Themes"
 # Set desktop wallpaper settings
 New-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name WallPaper -PropertyType String -Value "%APPDATA%\Microsoft\Windows\Themes\TranscodedWallpaper" –Force | Out-Null
 New-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name Interval -PropertyType DWord -Value "0xffffffff" –Force | Out-Null
-
+```
 
 Replace `<Your_Encoded_PIDL_Here>` with the actual encoded PIDL you want to use. This script sets up a desktop slideshow with configurable shuffle and interval settings by modifying the Windows Registry. It also handles the creation and placement of a slideshow.ini file in the correct location.
 
