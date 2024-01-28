@@ -1,22 +1,5 @@
 # PowerShell script to set lock screen image and reset permissions 27-11-2023 (windows 10 & 11)
 
-## Adding Registry Keys for Personalization
-```powershell
-# PowerShell script to set lock screen image
-
-# Create the required key if it doesn't exist
-New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP" -Force
-
-# Set the lock screen image path
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP" -Name "LockScreenImagePath" -Value "C:\Windows\Web\Screen\image.jpg" -Type String -Force
-
-# Set the lock screen image URL
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP" -Name "LockScreenImageUrl" -Value "C:\Windows\Web\Screen\image.jpg" -Type String -Force
-
-# Enable the lock screen image
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP" -Name "LockScreenImageStatus" -Value 1 -Type DWord -Force
-
-
 ## Resetting permissions on SystemData folder
 icacls "C:\ProgramData\Microsoft\Windows\SystemData" /reset /t /c /l
 
@@ -36,3 +19,22 @@ icacls "C:\ProgramData\Microsoft\Windows\SystemData" /reset /t /c /l
 
 
 This script will create a new registry key for `PersonalizationCSP` if it doesn't already exist and set the properties to define the lock screen image path and status. Remember to run PowerShell as an administrator when executing scripts that modify the registry. Also, ensure that the image path `C:\Windows\Web\Screen\image.jpg` is correct and that the image file exists at that location before running the script.
+
+## Adding Registry Keys for Personalization
+```powershell
+# PowerShell script to set lock screen image
+
+# Create the required key if it doesn't exist
+New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP" -Force
+
+# Set the lock screen image path
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP" -Name "LockScreenImagePath" -Value "C:\Windows\Web\Screen\image.jpg" -Type String -Force
+
+# Set the lock screen image URL
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP" -Name "LockScreenImageUrl" -Value "C:\Windows\Web\Screen\image.jpg" -Type String -Force
+
+# Enable the lock screen image
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP" -Name "LockScreenImageStatus" -Value 1 -Type DWord -Force
+
+
+
