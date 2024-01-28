@@ -34,7 +34,7 @@
 
 
 1- Create a script file .ps1 using Powershell ISE 
-
+```powershell
 [CmdletBinding()]
 param (
 	[Parameter( Mandatory=$true)]
@@ -72,9 +72,9 @@ foreach ($mailboxfolder in $mailboxfolders)
     Write-Host "Adding $user to $identity with $access permissions"
     Add-MailboxFolderPermission -Identity $identity -User $user -AccessRights $Access -ErrorAction SilentlyContinue
 }
-
+```
 2- Connect to microsoft using Connect-Exchangeonline
 
 3- And run the following command for the mailbox and user
-
+```powershell
 .\ExchangeReadOnlyAccess.ps1 -Access reviewer -Mailbox USER@domain.com.sa -User USER@domain.com.sa
