@@ -1,7 +1,0 @@
-(Message store has reached its maximum size) error For Microsoft 365 
-
-1- Nagviate to Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\PST
-2- Create a New DWORD 32 bit and name it "MaxLargeFileSize" with value of 92160
-3- Create a New DWORD 32 bit and name it "WarnLargeFileSize" with value of 90112
-
-Then open Outlook and issue should be solved
