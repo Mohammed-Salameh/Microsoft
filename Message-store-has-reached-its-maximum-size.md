@@ -10,7 +10,7 @@ If you encounter the error message "Message store has reached its maximum size" 
 Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\PST
 
 
-2. **Modify the Maximum Size Limit**:
+2. **Create the Maximum Size Limit**:
 Right-click on the `PST` key, select `New` > `DWORD (32-bit) Value`, and create the following entries:
 
 - `MaxLargeFileSize`:
