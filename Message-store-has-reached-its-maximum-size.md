@@ -27,5 +27,6 @@ Ensure that you enter the value data in Decimal, not Hexadecimal.
 
 3. **Restart Outlook**:
 Close the Registry Editor, then restart Microsoft Outlook. The issue should now be resolved, and you should be able to use your message store without encountering the size limit error.
+## Important Note
 
-Please note: Modifying the Windows Registry can cause serious problems if not done correctly. It's recommended that you back up the registry before making any changes and only proceed if you are comfortable with these steps.
+**Please note: Modifying the Windows Registry can cause serious problems if not done correctly. It's recommended that you back up the registry before making any changes and only proceed if you are comfortable with these steps.**
