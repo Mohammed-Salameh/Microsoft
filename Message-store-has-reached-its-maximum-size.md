@@ -1,4 +1,4 @@
-## Fixing "Message Store Has Reached Its Maximum Size" Error in Microsoft 365
+# Fixing "Message Store Has Reached Its Maximum Size" Error in Microsoft 365
 
 If you encounter the error message "Message store has reached its maximum size" in Microsoft 365, it's likely because your Outlook data file (PST) has reached the size limit. To resolve this issue, you will need to modify the Windows Registry to increase the maximum size allowed for the PST file.
 
