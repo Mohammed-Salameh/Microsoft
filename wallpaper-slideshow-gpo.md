@@ -52,60 +52,66 @@ Remember, these instructions assume a certain level of familiarity with PowerShe
 ---
 
 # Configure CurrentUser Sourcefolder, Slideshow (BackgroundType = 2) and inform that the directory has been set
+
+```powershell
 param (
-[switch]$Shuffle,
-[string]$IntervalMiliseconds = "10000",
-[string]$TargetPIDL = "eEAFA8BUg/E0gouOpBhoYjAArADMdmBAvMkOcBAAAAAAAAAAAAAAAAAAAAAAAAw7AEDAAAAAAc3VxtLEAcVQMxEUB5XMAAARAkAAEAw7+e3Vxt7dXF3uuAAAAEh3BAAAAYBAAAAAAAAAAAAAAAAAAAwUsdMAXBQYAwGAsBAcAEGAwBQZAIHAAAAGAMJAAAwJA8uvFCAAAEzUQN1td66/Nyx/DFIjECkOjOXLpBAAAQGAAAAAfAAAAwCAAAwdAkGAuBAZA8GA3BwcA4CApBQbA0GAlBgcAMHApBgdAUGAjBwbA4GA0BgcA8GAsBAcAEGAuBQZAwGAfBwYAcHA1AgbAEDAoBgMAQHA4BQeAUGA3BQeAAAAAAAAAAAAAAAGAAAA"
+    [switch]$Shuffle,
+    [string]$IntervalMiliseconds = "10000",
+    [string]$TargetPIDL = "<Your_Encoded_PIDL_Here>"
 )
-#To make the script run in ISE
+
+# To make the script run in ISE
 if ($psISE.CurrentFile.FullPath.Length -ge 1){
     Set-Location $psISE.CurrentFile.FullPath
 }
-#Set-Location -Path "$Sourcefolder"
-#Define vars
+
+# Define vars
 $UserProfile = @{"SID" = "";"UserHive" = ""}
+
 try {
     $tsenv = New-Object -ComObject Micrsoft.SMS.TSEnvironment
-        if ($tsenv.value("_SMSTSInWinPE") -eq $true){
-            $UserProfile.UserHive = "C:\Users\Default\NTUSER.DAT"
-            $UserProfile.SID = ".DEFAULT"
-        }
-}
-catch {
+    if ($tsenv.value("_SMSTSInWinPE") -eq $true){
+        $UserProfile.UserHive = "C:\Users\Default\NTUSER.DAT"
+        $UserProfile.SID = ".DEFAULT"
+    }
+} catch {
     Write-Output "Not in TaskSequence"
     Add-Type -AssemblyName System.DirectoryServices.AccountManagement
     $UserProfile.UserHive = $env:USERPROFILE + "\NTUSER.DAT"
     $UserProfile.SID = ([System.DirectoryServices.AccountManagement.UserPrincipal]::Current).Sid.value
 }
+
 if ($Shuffle){
     $ShuffleValue = 1
-}
-else{
+} else{
     $ShuffleValue = 0
 }
-#Create FolderVar
+
+# Create FolderVar
 $EncrytpedPath = $TargetPIDL
- 
+
+# Set slideshow settings
 New-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers -Name SlideshowDirectoryPath1 -PropertyType ExpandString -Value $EncrytpedPath –Force | Out-Null
 New-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers -Name BackgroundType -PropertyType DWord -Value 2 –Force | Out-Null
 New-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers -Name SlideshowSourceDirectoriesSet -PropertyType DWord -Value 1 –Force | Out-Null
- 
+
+# Set desktop slideshow settings
 New-ItemProperty -Path "HKCU:\Control Panel\Personalization\Desktop Slideshow" -Name Shuffle -PropertyType DWord -Value $ShuffleValue –Force | Out-Null
 New-ItemProperty -Path "HKCU:\Control Panel\Personalization\Desktop Slideshow" -Name Interval -PropertyType DWord -Value $IntervalMiliseconds –Force | Out-Null
- 
+
+# Create slideshow.ini file if it doesn't exist
 if (Test-Path .\slideshow.ini){
     Remove-Item -Path .\slideshow.ini -Force
 }
 Set-Content .\slideshow.ini -Value "[Slideshow]"
 Add-Content .\slideshow.ini -Value "ImagesRootPIDL=$EncrytpedPath"
-Copy-Item .\slideshow.ini -Destination ($env:APPDATA+"\Microsoft\Windows\Themes\") -Force
- 
- 
+Copy-Item .\slideshow.ini -Destination ($env:APPDATA+"\Microsoft\Windows\Themes") -Force
+
+# Set desktop wallpaper settings
 New-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name WallPaper -PropertyType String -Value "%APPDATA%\Microsoft\Windows\Themes\TranscodedWallpaper" –Force | Out-Null
 New-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name Interval -PropertyType DWord -Value "0xffffffff" –Force | Out-Null
- 
- # Set wallpaper style to Fit
-New-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name WallpaperStyle -PropertyType String -Value "6" –Force | Out-Null
 
-Stop-Process -Name explorer -Force
-Start-Process explorer.exe
+
+Replace `<Your_Encoded_PIDL_Here>` with the actual encoded PIDL you want to use. This script sets up a desktop slideshow with configurable shuffle and interval settings by modifying the Windows Registry. It also handles the creation and placement of a slideshow.ini file in the correct location.
+
+Please note that running scripts that interact with the Windows Registry can potentially cause system instability if not executed correctly. Always ensure you have backups and are aware of the potential impacts before running such scripts.
