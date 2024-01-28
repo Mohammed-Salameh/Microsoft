@@ -30,8 +30,9 @@ Replace IP-Address-Or-DNS-Name:Port with the actual IP address or DNS name and p
 
 Retry Synchronization:
 Save the changes to machine.config and close the text editor. Now, retry the synchronization process; it should work correctly with the updated proxy settings.
-Important Note
-Be cautious when editing the machine.config file, as incorrect settings can affect all applications that use the .NET Framework on that machine. It is advisable to backup the machine.config file before making any changes.
+## Important Note
+
+*Be cautious when editing the machine.config file, as incorrect settings can affect all applications that use the .NET Framework on that machine. It is advisable to backup the machine.config file before making any changes.*
 
 
-Before you proceed with these steps, please ensure that you have the correct proxy settings and that you have administrative privileges to edit the `machine.config` file. Always make a backup before editing system configuration files.
+### Before you proceed with these steps, please ensure that you have the correct proxy settings and that you have administrative privileges to edit the `machine.config` file. Always make a backup before editing system configuration files.
