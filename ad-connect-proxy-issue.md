@@ -25,7 +25,7 @@ Open the `machine.config` file with a text editor like Notepad with administrati
         />
     </defaultProxy>
 </system.net>
-
+```
 Replace IP-Address-Or-DNS-Name:Port with the actual IP address or DNS name and port number of your proxy.
 
 Retry Synchronization:
