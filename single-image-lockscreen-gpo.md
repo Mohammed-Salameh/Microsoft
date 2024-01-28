@@ -10,15 +10,15 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Personal
 icacls "C:\ProgramData\Microsoft\Windows\SystemData" /reset /t /c /l
 
 
- ** create a user gpo and call it Lock Screen Configuration Policy ** 
- ** navigate to User Configuration -> Perferences -> Files -> and copy the picture to folder c:\windows\web\screen  ** 
- ** create a script call it lockscreen.ps1 ** 
- ** copy the script file to \\dc\sysvol\yourdomain\scripts\ ** 
- ** Navigate to Users Configuration -> Perferences -> Folders -> Create a new folder and call it Scripts
-  Path c:\Scripts ** 
- ** Navigate to User Configuration -> Perferences -> Files -> and copy the script to c:\scripts ** 
- ** navigate to Users Configuration -> Policies -> Windows Settings -> Scripts -> Double click Logon and add the below values ** 
+ **create a user gpo and call it Lock Screen Configuration Policy** 
+ **navigate to User Configuration -> Perferences -> Files -> and copy the picture to folder c:\windows\web\screen** 
+ **create a script call it lockscreen.ps1** 
+ **copy the script file to \\dc\sysvol\yourdomain\scripts\**
+ **Navigate to Users Configuration -> Perferences -> Folders -> Create a new folder and call it Scripts
+  Path c:\Scripts**
+ **Navigate to User Configuration -> Perferences -> Files -> and copy the script to c:\scripts**
+ **navigate to Users Configuration -> Policies -> Windows Settings -> Scripts -> Double click Logon and add the below values**
 #### Script Name:
-   **  C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe ** 
+   **C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe**
 #### Script Parameteres 
-  **  -ExecutionPolicy Bypass -NoProfile -File "c:\scripts\lockscreen.ps1" ** 
+  **-ExecutionPolicy Bypass -NoProfile -File "c:\scripts\lockscreen.ps1"**
