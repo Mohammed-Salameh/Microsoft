@@ -51,7 +51,7 @@ Remember, these instructions assume a certain level of familiarity with PowerShe
 
 ---
 
-# Configure CurrentUser Sourcefolder, Slideshow (BackgroundType = 2) and inform that the directory has been set
+## Configure CurrentUser Sourcefolder, Slideshow (BackgroundType = 2) and inform that the directory has been set
 
 ```powershell
 param (
