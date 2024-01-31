@@ -1,4 +1,4 @@
-# PowerShell script to set lock screen image and reset permissions 27-11-2023 (windows 10 & 11)
+# PowerShell script to set lock screen image (windows 10 & 11)
 
 ## Resetting permissions on SystemData folder
 icacls "C:\ProgramData\Microsoft\Windows\SystemData" /reset /t /c /l
