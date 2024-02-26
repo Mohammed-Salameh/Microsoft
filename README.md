@@ -42,7 +42,7 @@
 
 *Regularly apply updates and patches to your Exchange servers to protect against vulnerabilities and ensure compliance with support policies.*
 
-*If operating in a hybrid environment, use the Hybrid Configuration Wizard (HCW) to correctly configure the integration between on-premises Exchange and Exchange Online.*
+*Use the Hybrid Configuration Wizard (HCW) to correctly configure the integration between on-premises Exchange and Exchange Online.*
 
 
 
