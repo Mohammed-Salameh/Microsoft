@@ -24,7 +24,7 @@
 
 ### Azure AD Connect
 
-*Before deployment, it's crucial to perform a directory cleanup. Identify and rectify any issues in your on-premises AD, such as duplicate attributes, invalid characters, and unsupported objects. Use tools like IdFix to identify and fix these issues.*
+*Before deployment, it's crucial to perform a directory cleanup. Identify and rectify any issues in your on-premises AD, such as duplicate attributes, invalid characters, and unsupported objects.*
 
 *Ensure that the necessary endpoints are accessible from the server where Azure AD Connect will be installed. This may involve configuring firewalls and proxy servers to allow communication with Azure AD.*
 
