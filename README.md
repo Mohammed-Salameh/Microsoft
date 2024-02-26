@@ -4,7 +4,7 @@
 
 ### PowerShell
 
-*Remember, these Scripts assume a certain level of familiarity with PowerShell in a Windows Server environment. Always test scripts in a controlled environment before deploying them domain-wide.*
+*Remember, these Scripts assume a certain level of familiarity with PowerShell in a Windows Server environment. Always test scripts in a controlled environment before deploying them.*
 
 ### Group Policies 
 
