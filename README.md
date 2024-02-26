@@ -32,3 +32,17 @@
 
 *Be aware of common issues and their resolutions, such as synchronization errors, connector issues, or authentication problems.*
 
+### Exchange
+
+*Carefully plan your Exchange architecture, considering factors such as high availability, disaster recovery, and the expected mail flow. For hybrid configurations, understand how on-premises and cloud components will interact.*
+
+*Strategically place mailbox databases and plan for growth. Consider database availability groups (DAGs) for high availability.*
+
+*Implement secure mail flow practices, including the use of TLS for all connections and configuring anti-spam and anti-malware protections.*
+
+*Regularly apply updates and patches to your Exchange servers to protect against vulnerabilities and ensure compliance with support policies.*
+
+*If operating in a hybrid environment, use the Hybrid Configuration Wizard (HCW) to correctly configure the integration between on-premises Exchange and Exchange Online.*
+
+
+
