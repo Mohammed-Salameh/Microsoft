@@ -2,9 +2,25 @@
 
 *This repository contains the scripts and configuration settings for Microsoft services.*
 
-### PowerShell & Group Policies
+### PowerShell
 
-*Remember, these Scripts assume a certain level of familiarity with PowerShell and Group Policy Management in a Windows Server environment. Always test scripts and policies in a controlled environment before deploying them domain-wide.*
+*Remember, these Scripts assume a certain level of familiarity with PowerShell in a Windows Server environment. Always test scripts in a controlled environment before deploying them domain-wide.*
+
+### Group Policies 
+
+*Be aware of the GPO processing order (LSDOU: Local, Site, Domain, and then OU) and how GPOs applied at different levels may interact or override each other due to inheritance.*
+
+*Always test new or modified GPOs in a staging or test environment that mirrors the production environment as closely as possible.*
+
+*Utilize the Group Policy Modeling and Results wizards in the Group Policy Management Console (GPMC) to predict and review the impact of GPO deployments.*
+
+*Make changes incrementally and document each change. This practice makes troubleshooting easier if something goes wrong.*
+
+*Carefully consider who has permission to create, link, and edit GPOs. Use role-based access control to minimize the risk of unauthorized or accidental changes.*
+
+*Understand the refresh intervals for GPOs and adjust if necessary, keeping in mind the balance between policy update needs and system performance.*
+
+*Keep Administrative Templates (.admx files) updated to support new policies, especially after upgrading operating systems or deploying new applications.*
 
 ### Azure AD Connect
 
