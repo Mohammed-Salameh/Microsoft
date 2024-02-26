@@ -48,5 +48,3 @@ Install-ADDSDomainController `
 
 - Replace `"yourdomain.com"` with the name of your existing domain.
 - `"YourSafePassword"` should be replaced with a secure password for the DSRM.
-
-This detailed guide is specifically tailored for managing Windows Server Core installations, focusing on command-line and PowerShell operations, which are essential for server administration without a graphical interface.
