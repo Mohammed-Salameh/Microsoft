@@ -1,7 +1,3 @@
-The guide provided above is also applicable for Windows Server Core installations, with the focus on using PowerShell commands, which is the primary method for managing Windows Server Core installations due to its minimal GUI. Windows Server Core lacks the traditional full graphical user interface, so management and configuration tasks are typically performed via the command line interface, PowerShell, or remote management tools.
-
-Here's a more detailed guide tailored for Windows Server Core environments, especially focusing on the installation and configuration of a Domain Controller in Active Directory Domain Services (AD DS):
-
 ### First Domain Deployment on Windows Server Core
 
 #### Step 1: Install Active Directory Domain Services
