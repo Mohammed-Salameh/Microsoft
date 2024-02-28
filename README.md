@@ -1,4 +1,6 @@
-# Microsoft
+<p align="center">
+    <img width="1080" src="https://github.com/Mohammed-Salameh/Microsoft/assets/140098574/419de080-7f04-4520-99a4-64811ade8296" alt="Material Bread logo">
+</p>
 
 *This repository contains the scripts and configuration settings for Microsoft services.*
 
