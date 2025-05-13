@@ -1,5 +1,5 @@
 
-## Resolving Account Duplication Issues andManual Synchronization in Azure AD due to ObjectGUID Mismatch
+## Resolving Account Duplication Issues and Manual Synchronization in Azure AD due to ObjectGUID Mismatch
 
 If you encounter account duplication issues or problems with merging accounts in Azure AD, it may be due to a mismatch between the `ObjectGUID` in your local domain and the `ImmutableID` in Azure AD. To address this, you can manually align these IDs using PowerShell. Follow these steps:
 
